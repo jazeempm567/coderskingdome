@@ -29,9 +29,20 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/mystyle.css" rel="stylesheet">
 </head>
 
 <body>
+    <!-- Popup Banner -->
+    <div id="popup-banner" class="popup-overlay">
+    <div class="popup-content">
+        <button class="close-btn" id="close-popup">&times;</button>
+        <a href="#" id="popup-link">
+        <img src="img/banner-competition.png" alt="Popup Banner" class="popup-image">
+        </a>
+    </div>
+    </div>
+
     <div class="container-xxl bg-white p-0">
         <!-- Spinner Start -->
         <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -432,7 +443,24 @@
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
     <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+    <script src="js/main.js"></script> 
+    <!-- popup js -->
+    <script>
+        window.onload = function() {
+            const popup = document.getElementById('popup-banner');
+            const closeBtn = document.getElementById('close-popup');
+
+            // Show popup on load
+            popup.style.display = 'flex';
+
+            // Close popup on clicking close button
+            closeBtn.addEventListener('click', function(e) {
+            e.stopPropagation(); // prevent triggering link
+            popup.style.display = 'none';
+            });
+        };
+    </script>
+
 </body>
 
-</html>
+</html> 
