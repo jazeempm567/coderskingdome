@@ -165,7 +165,8 @@ h6,
 .header-carousel::before,
 .header-carousel::after,
 .page-header::before,
-.page-header::after {
+.page-header::after,
+.competition-header::before   {
     position: absolute;
     content: "";
     width: 100%;
